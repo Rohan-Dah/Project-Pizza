@@ -4,6 +4,10 @@
   "description": "Realtime Pizza app",
   "main": "index.js",
   "author": "Rohan",
+  "scripts": {
+    "serve": "node server.js",
+    "dev": "nodemon server.js"
+  },
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.8",
