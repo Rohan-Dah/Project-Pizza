@@ -1,13 +1,13 @@
-1) Create Directory Stuctures
+1)(Done) Create Directory Stuctures
 
-2) Create A new NPM Project and install all dependancies
+2)(Done) Create A new NPM Project and install all dependancies
 - Dependancies  
     -express
     -ejs express-ejs-layouts
 - Dev Dependancies
     - nodemon
 
-3) Create express server - create server.js file
+3)(Done) Create express server - create server.js file
 
 4) Create Home Page using HTML and CSS
     -include tailwind css
