@@ -1,0 +1,8 @@
+{
+  "name": "Project-Pizza",
+  "version": "1.0.0",
+  "description": "Realtime Pizza app",
+  "main": "index.js",
+  "author": "Rohan",
+  "license": "MIT"
+}
