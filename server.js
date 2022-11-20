@@ -10,13 +10,22 @@ const PORT = process.env.PORT || 3300
 // PORT variable will be either assigned with process.env which is currently available environment port number or the port number will be 3000. In short we are setting sn environment variable.
 // PORT mila toh PORT variable mein port rahega
 
-
 app.get('/', (req, res) => {
     res.render('home')
 })
 
+app.get('/cart', (req, res) => {
+    res.render('customers/cart')
+}) 
+// This is used to direct the server to the cart page.
+
+// Assets
+app.use(express.static('public'))
+
+
 app.use(expressLayout)
 app.set('views', path.join(__dirname, '/resources/views'))
+
 //Here we will set the file path of views folder which will contain how will the site look like
 app.set('view engine', 'ejs')
 /*

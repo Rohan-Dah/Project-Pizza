@@ -1,0 +1,51 @@
+@import './variables';
+
+body{
+    font-family: 'Lato', sans-serif;
+    // if lato dont work we'll have sans-serif.
+    -wekit-font-smoothing: antialiased;
+    color: $dark;
+    height: 4000px;
+}
+
+nav li:last-child{
+    background: $primary;
+    &:hover{
+        background: $primary-hover ;
+    }
+}
+
+nav li a:hover{
+    transition: $smooth;
+    &:hover{
+        color: $primary;
+    }
+}
+
+section.hero{
+    background: $secondary;
+}
+
+.size{
+    background: $secondary;
+}
+
+.add-to-cart{
+    border: 2px solid $primary;
+    color: $primary;
+    &:hover{
+        background: $primary;
+        border-color: $pure;
+        color: $pure;
+        transition: $smooth;
+    }
+}
+
+.btn-primary{
+    background: $primary;
+    transition: $smooth;
+    &:hover{
+        background: $primary-hover;
+    }
+
+}

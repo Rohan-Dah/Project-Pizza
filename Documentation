@@ -20,9 +20,6 @@ Mix is like cream layer for the users. It uses a simple fluent api for webpack c
 Mix can target 80% of the usecases.
 
 
-
-
-
 /Project-Pizza/server.js
 Server.js file
 Line 1: Firstly we are creating a variable express and adding express module into it.
