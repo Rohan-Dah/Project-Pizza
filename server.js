@@ -11,10 +11,43 @@ const PORT = process.env.PORT || 3300
 // PORT mila toh PORT variable mein port rahega
 
 // This is used to direct the server to the cart page.
+const { colors } = require('laravel-mix/src/Log')
+
+const mongoose = require('mongoose');
+// Database connection
+const url = 'mongodb://localhost/pizza';
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: true
+})
+.catch(err => {
+    console.log('Connection failed...');
+}) //Here we are calling connect method on mongoose variable which we earlier intitialized with mongoose path.  First para is a url and second is the configuration of mongodb
+
+const connection = mongoose.connection;
+connection.once('open', () => {   //This is the event listerer which means open will be called if database is connnected and if not parcer will move to catch block
+    console.log('Database connected...');
+})
+
+
+// connection
+//     .once('open', () => console.log('Database connected...'))
+//     .catch('error', (error) => {
+//         console.log("Connection failed...")
+//     })
+
+// mongoose.connection
+//     .once('open', function () {
+//       console.log('MongoDB running');
+//     })
+//     .on('error', function (err) {
+//       console.log(err);
+//     });
 
 // Assets
 app.use(express.static('public'))
-
 
 app.use(expressLayout)
 app.set('views', path.join(__dirname, '/resources/views'))
@@ -22,21 +55,9 @@ app.set('views', path.join(__dirname, '/resources/views'))
 //Here we will set the file path of views folder which will contain how will the site look like
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
-    res.render('home')
-})
+require('./routes/web')(app)
+//Here app is being sent by reference
 
-app.get('/cart', (req, res) => {
-    res.render('customers/cart')
-}) 
-
-app.get('/login', (req, res) => {
-    res.render('auth/login')
-}) 
-
-app.get('/register', (req, res) => {
-    res.render('auth/register')
-}) 
 /*
 if(process.env.PORT)
 {
@@ -48,7 +69,7 @@ else{
 }
 */
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Listening on Port ${PORT}`)
 })
 //app.listen is used to listen and bind the connections on host and port. This is similar to Node's http.server.listen
