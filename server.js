@@ -6,7 +6,7 @@ const expressLayout = require('express-ejs-layouts')
 
 const path = require('path')
 
-const PORT = process.env.PORT || 3300
+const PORT = process.env.PORT || 3000
 // PORT variable will be either assigned with process.env which is currently available environment port number or the port number will be 3000. In short we are setting sn environment variable.
 // PORT mila toh PORT variable mein port rahega
 
@@ -14,37 +14,22 @@ const PORT = process.env.PORT || 3300
 const { colors } = require('laravel-mix/src/Log')
 
 const mongoose = require('mongoose');
-// Database connection
+
 const url = 'mongodb://localhost/pizza';
 mongoose.connect(url, {
     useNewUrlParser: true,
-    useCreateIndex: true,
+    // useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: true
-})
-.catch(err => {
-    console.log('Connection failed...');
-}) //Here we are calling connect method on mongoose variable which we earlier intitialized with mongoose path.  First para is a url and second is the configuration of mongodb
-
+    // useFindAndModify: true
+});
 const connection = mongoose.connection;
-connection.once('open', () => {   //This is the event listerer which means open will be called if database is connnected and if not parcer will move to catch block
+connection.once('open', () => {
     console.log('Database connected...');
 })
 
-
-// connection
-//     .once('open', () => console.log('Database connected...'))
-//     .catch('error', (error) => {
-//         console.log("Connection failed...")
-//     })
-
-// mongoose.connection
-//     .once('open', function () {
-//       console.log('MongoDB running');
-//     })
-//     .on('error', function (err) {
-//       console.log(err);
-//     });
+.on('error', (error) => {
+    console.log('Connection error:', error);
+});
 
 // Assets
 app.use(express.static('public'))
