@@ -4,7 +4,7 @@
 This is a realtime pizza delivery app that focuses on status updates of pizza in realtime.
 Admin user will be the one to  make changes to the status that will be reflected back to to the normal user.
 
-NOTE: THE PROJECT IS STILL ABOUT TO BE COMPLETE BUT THE CONTRIBUTIONS TO THE PROJECT ARE MY OWN TILL THE MOMENT OF THIS COMMIT. NO OTHER COMMIT WILL BE MADE ON THS BRANCH TO AVOID ANY FURTHER CONFLICT.
+NOTE: THE PROJECT IS STILL ABOUT TO BE COMPLETE BUT THE CONTRIBUTIONS TO THE PROJECT ARE MY OWN TILL THE MOMENT OF THIS COMMIT. NO OTHER COMMIT WILL BE MADE ON THIS BRANCH TO AVOID ANY FURTHER CONFLICT.
 
 ## How to deploy the project?
 
